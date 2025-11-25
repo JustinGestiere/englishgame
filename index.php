@@ -5,10 +5,16 @@ header('Content-Type: text/html; charset=utf-8');
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="author" content="Equipe Branding">
+    <meta name="keywords" content="branding, quiz, style guide, identité de marque, design, marketing">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="theme-color" content="#3498db">
+    <meta name="description" content="Testez vos connaissances en branding avec ce quiz interactif. Découvrez les règles essentielles des guides de style et d'identité de marque." />
+    <title>The Brand Quest - Testez vos connaissances en branding</title>
     <style>
-        /* Reset and base styles */
+        /* Réinitialisation et styles de base */
         * {
             margin: 0;
             padding: 0;
@@ -252,35 +258,35 @@ header('Content-Type: text/html; charset=utf-8');
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <div class="container">
         <header>
-            <h1>Quiz Game</h1>
+            <h1>The Brand Quest</h1>
         </header>
 
         <main id="main-content">
             <!-- Home Screen -->
             <section id="home" class="section active">
                 <div class="btn-group">
-                    <button id="startQuiz" class="btn" aria-label="Commencer le quiz">Faire le quiz</button>
-                    <button id="showRules" class="btn" aria-label="Voir les règles du jeu">Voir les règles</button>
+                    <button id="startQuiz" class="btn" aria-label="Start the quiz">Start Quiz</button>
+                    <button id="showRules" class="btn" aria-label="View game rules">View Rules</button>
                 </div>
             </section>
 
             <!-- Rules Section -->
             <section id="rules" class="section">
                 <div class="rules">
-                    <h2>Règles du jeu</h2>
+                    <h2>Game Rules</h2>
                     <ol>
-                        <li>Le quiz est composé de 3 questions de difficulté croissante (facile, normale, difficile).</li>
-                        <li>Pour chaque question, sélectionnez la réponse qui vous semble correcte.</li>
-                        <li>Vous devez répondre à toutes les questions pour obtenir votre score.</li>
-                        <li>Pour gagner, vous devez avoir au moins 2 bonnes réponses sur 3.</li>
-                        <li>Prenez votre temps et bonne chance !</li>
+                        <li>The quiz consists of 3 questions of increasing difficulty (easy, normal, hard).</li>
+                        <li>For each question, select the answer that seems correct to you.</li>
+                        <li>You must answer all questions to get your score.</li>
+                        <li>To win, you need to get at least 2 out of 3 answers correct.</li>
+                        <li>Take your time and good luck!</li>
                     </ol>
                     <div class="btn-group">
-                        <button id="backFromRules" class="btn" aria-label="Retour à l'accueil">Retour</button>
+                        <button id="backFromRules" class="btn" aria-label="Back to home">Back</button>
                     </div>
                 </div>
             </section>
@@ -288,14 +294,14 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Quiz Section -->
             <section id="quiz" class="section">
                 <div id="quizContainer">
-                    <div class="progress" id="progress" aria-live="polite">Question 1 sur 3</div>
+                    <div class="progress" id="progress" aria-live="polite">Question 1 of 3</div>
                     <div class="question-container">
                         <div id="question" class="question" aria-live="polite"></div>
                         <div id="options" class="options" role="radiogroup"></div>
                     </div>
                     <div class="navigation">
-                        <button id="backBtn" class="btn hidden" aria-label="Question précédente">Précédent</button>
-                        <button id="nextBtn" class="btn" aria-label="Question suivante">Suivant</button>
+                        <button id="backBtn" class="btn hidden" aria-label="Previous question">Previous</button>
+                        <button id="nextBtn" class="btn" aria-label="Next question">Next</button>
                     </div>
                 </div>
 
@@ -305,8 +311,8 @@ header('Content-Type: text/html; charset=utf-8');
                     <p id="scoreText"></p>
                     <div id="feedback"></div>
                     <div class="btn-group">
-                        <button id="restartQuiz" class="btn" aria-label="Recommencer le quiz">Nouveau quiz</button>
-                        <button id="backToHome" class="btn" aria-label="Retour à l'accueil">Accueil</button>
+                        <button id="restartQuiz" class="btn" aria-label="Restart the quiz">New Quiz</button>
+                        <button id="backToHome" class="btn" aria-label="Back to home">Home</button>
                     </div>
                 </div>
             </section>
@@ -540,7 +546,7 @@ header('Content-Type: text/html; charset=utf-8');
                 ]
             };
 
-            // Navigation functions
+            // Fonctions de navigation entre les différentes sections de l'application
             function showSection(sectionToShow) {
                 // Hide all sections
                 document.querySelectorAll('.section').forEach(section => {
@@ -553,7 +559,7 @@ header('Content-Type: text/html; charset=utf-8');
                 if (focusable) focusable.focus();
             }
 
-            // Event Listeners for navigation
+            // Écouteurs d'événements pour la navigation entre les pages
             startQuizBtn.addEventListener('click', startQuiz);
             showRulesBtn.addEventListener('click', () => showSection(rulesSection));
             backFromRulesBtn.addEventListener('click', () => showSection(homeSection));
@@ -563,7 +569,8 @@ header('Content-Type: text/html; charset=utf-8');
             });
             restartQuizBtn.addEventListener('click', startQuiz);
 
-            // Start a new quiz
+            // Démarre un nouveau quiz
+            // Réinitialise l'état du quiz et charge les questions
             function startQuiz() {
                 // Reset quiz state
                 currentQuestionIndex = 0;
@@ -590,7 +597,9 @@ header('Content-Type: text/html; charset=utf-8');
                 loadQuestion();
             }
 
-            // Get a random question from a difficulty level
+            // Récupère une question aléatoire d'un niveau de difficulté donné
+            // @param {string} difficulty - Niveau de difficulté ('easy', 'normal', 'hard')
+            // @returns {Object} Une question aléatoire du niveau spécifié
             function getRandomQuestion(difficulty) {
                 const availableQuestions = questions[difficulty];
                 const randomIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -600,7 +609,9 @@ header('Content-Type: text/html; charset=utf-8');
                 };
             }
 
-            // Shuffle array (Fisher-Yates algorithm)
+            // Mélange un tableau en utilisant l'algorithme de Fisher-Yates
+            // @param {Array} array - Le tableau à mélanger
+            // @returns {Array} Le tableau mélangé
             function shuffleArray(array) {
                 const newArray = [...array];
                 for (let i = newArray.length - 1; i > 0; i--) {
@@ -610,11 +621,13 @@ header('Content-Type: text/html; charset=utf-8');
                 return newArray;
             }
 
-            // Load question into the UI
+            // Charge la question actuelle dans l'interface utilisateur
+            // Affiche la question et les options de réponse
+            // Met à jour la barre de progression
             function loadQuestion() {
                 const question = quizQuestions[currentQuestionIndex];
                 questionElement.textContent = question.question;
-                progressElement.textContent = `Question ${currentQuestionIndex + 1} sur ${quizQuestions.length}`;
+                progressElement.textContent = `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
                 
                 // Clear previous options
                 optionsContainer.innerHTML = '';
@@ -650,7 +663,7 @@ header('Content-Type: text/html; charset=utf-8');
                 
                 // Update navigation buttons
                 backBtn.classList.toggle('hidden', currentQuestionIndex === 0);
-                nextBtn.textContent = currentQuestionIndex === quizQuestions.length - 1 ? 'Terminer' : 'Suivant';
+                nextBtn.textContent = currentQuestionIndex === quizQuestions.length - 1 ? 'Finish' : 'Next';
                 
                 // Disable next button if no option is selected
                 nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined;
@@ -661,7 +674,9 @@ header('Content-Type: text/html; charset=utf-8');
                 }
             }
 
-            // Handle option selection
+            // Gère la sélection d'une option de réponse
+            // @param {HTMLElement} optionElement - L'élément HTML de l'option sélectionnée
+            // @param {number} index - L'index de l'option sélectionnée
             function selectOption(optionElement, index) {
                 // Deselect all options
                 document.querySelectorAll('.option').forEach(opt => {
@@ -682,7 +697,8 @@ header('Content-Type: text/html; charset=utf-8');
                 optionElement.focus();
             }
 
-            // Navigation between questions
+            // Gestion de la navigation entre les questions
+            // Permet de passer à la question suivante ou précédente
             backBtn.addEventListener('click', () => {
                 if (currentQuestionIndex > 0) {
                     currentQuestionIndex--;
@@ -701,7 +717,9 @@ header('Content-Type: text/html; charset=utf-8');
                 }
             });
 
-            // Show quiz results
+            // Affiche les résultats du quiz
+            // Calcule le score, affiche les réponses correctes/incorrectes
+            // Affiche un message de félicitations ou d'encouragement
             function showResults() {
                 // Calculate score
                 score = 0;
@@ -717,19 +735,19 @@ header('Content-Type: text/html; charset=utf-8');
                         <div class="question-feedback" style="margin: 15px 0; padding: 10px; border-radius: 5px; 
                             background: ${isCorrect ? '#d4edda' : '#f8d7da'};">
                             <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                            <p>Votre réponse: <span style="color: ${isCorrect ? '#155724' : '#721c24'}; font-weight: bold;">
-                                ${userAnswer !== undefined ? question.options[userAnswer] : 'Non répondue'}
+                            <p>Your answer: <span style="color: ${isCorrect ? '#155724' : '#721c24'}; font-weight: bold;">
+                                ${userAnswer !== undefined ? question.options[userAnswer] : 'Not answered'}
                             </span></p>
-                            ${!isCorrect ? `<p>Réponse correcte: <span style="color: #155724; font-weight: bold;">${question.options[question.correctIndex]}</span></p>` : ''}
+                            ${!isCorrect ? `<p>Correct answer: <span style="color: #155724; font-weight: bold;">${question.options[question.correctIndex]}</span></p>` : ''}
                         </div>
                     `;
                 });
                 
                 // Update UI
                 const isWin = score >= 2;
-                resultTitle.textContent = isWin ? '🎉 Félicitations ! 🎉' : 'Dommage...';
+                resultTitle.textContent = isWin ? '🎉 Congratulations! 🎉' : 'Too bad...';
                 resultTitle.setAttribute('aria-live', 'polite');
-                scoreText.textContent = `Vous avez obtenu ${score} bonne(s) réponse(s) sur ${quizQuestions.length}.`;
+                scoreText.textContent = `You got ${score} correct answer(s) out of ${quizQuestions.length}.`;
                 feedbackElement.innerHTML = resultsHtml;
                 
                 // Show appropriate result section
@@ -748,7 +766,7 @@ header('Content-Type: text/html; charset=utf-8');
                 try {
                     localStorage.setItem('lastQuizScore', score);
                 } catch (e) {
-                    console.error('Erreur lors de la sauvegarde du score:', e);
+                    console.error('Error while saving score:', e);
                 }
             }
 
@@ -761,16 +779,17 @@ header('Content-Type: text/html; charset=utf-8');
                 quizQuestions = [];
             }
 
-            // Keyboard navigation
+            // Gestion de la navigation au clavier
+            // Permet d'utiliser les touches fléchées et entrée/espace pour naviguer
             document.addEventListener('keydown', function(e) {
-                // Only handle keyboard events if we're on the quiz section
+                // Ne traite les événements clavier que si nous sommes dans la section quiz
                 if (!quizSection.classList.contains('active')) return;
                 
                 const options = Array.from(document.querySelectorAll('.option'));
                 const currentOption = document.activeElement;
                 const currentIndex = options.indexOf(currentOption);
                 
-                // Handle arrow key navigation between options
+                // Gestion de la navigation entre les options avec les touches fléchées
                 if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
                     e.preventDefault();
                     if (currentIndex < options.length - 1) {
@@ -783,14 +802,14 @@ header('Content-Type: text/html; charset=utf-8');
                     }
                 }
                 
-                // Handle space/enter to select option
+                // Gestion de la sélection d'option avec la touche espace ou entrée
                 if ((e.key === ' ' || e.key === 'Enter') && currentOption.classList.contains('option')) {
                     e.preventDefault();
                     const index = options.indexOf(currentOption);
                     selectOption(currentOption, index);
                 }
                 
-                // Handle tab navigation for accessibility
+                // Gestion de la navigation par tabulation pour l'accessibilité
                 if (e.key === 'Tab') {
                     // Ensure focus stays within the current question
                     if (e.shiftKey) {
@@ -810,9 +829,10 @@ header('Content-Type: text/html; charset=utf-8');
                 }
             });
             
-            // Initialize
+            // Initialisation
+            // Vérifie s'il y a un score précédent dans le stockage local
             if (localStorage.getItem('lastQuizScore') !== null) {
-                // Optional: Show last score on home screen
+                // Optionnel : Afficher le dernier score sur l'écran d'accueil
                 // const lastScore = localStorage.getItem('lastQuizScore');
                 // console.log('Dernier score:', lastScore);
             }
