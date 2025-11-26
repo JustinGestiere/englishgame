@@ -13,6 +13,9 @@ header('Content-Type: text/html; charset=utf-8');
     <meta name="theme-color" content="#3498db">
     <meta name="description" content="Testez vos connaissances en branding avec ce quiz interactif. Découvrez les règles essentielles des guides de style et d'identité de marque." />
     <title>The Brand Quest - Testez vos connaissances en branding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
