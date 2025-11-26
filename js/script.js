@@ -33,29 +33,206 @@ document.addEventListener('DOMContentLoaded', function() {
         easy: [
             {
                 id: 1,
-                question: "What is a brand style guide ?",
-                options: ["A document that defines a brand's visual and editorial rules", 
-                "An internal HR manual", 
-                "An annual marketing audit", 
-                "Graphic design software"],
+                question: "What is a brand style guide?",
+                options: [
+                    "A document that defines a brand's visual and editorial rules",
+                    "An internal HR manual",
+                    "An annual marketing audit",
+                    "Graphic design software"
+                ],
                 correctIndex: 0
             },
             {
                 id: 2,
-                question: "What basic elements does a style guide include ?",
-                options: ["Social media statistics", 
-                "Logo, colors, typography, brand voice", 
-                "The company's pricing", 
-                "The full editorial calendar"],
+                question: "What basic elements does a style guide include?",
+                options: [
+                    "Social media statistics",
+                    "Logo, colors, typography, brand voice",
+                    "The company's pricing",
+                    "The full editorial calendar"
+                ],
                 correctIndex: 1
             },
-            // ... autres questions ...
+            {
+                id: 3,
+                question: "What is the purpose of a color palette in branding?",
+                options: [
+                    "To make the brand look pretty",
+                    "To ensure visual consistency across all brand materials",
+                    "To limit design creativity",
+                    "To match the CEO's favorite colors"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 4,
+                question: "What is typography in the context of branding?",
+                options: [
+                    "The study of typewriters",
+                    "The art of arranging type to make written language legible and appealing",
+                    "A type of photography",
+                    "A printing technique"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 5,
+                question: "Why is consistency important in branding?",
+                options: [
+                    "It makes the brand look professional and trustworthy",
+                    "It's easier for designers",
+                    "It's required by law",
+                    "It saves money on printing"
+                ],
+                correctIndex: 0
+            },
+            {
+                id: 6,
+                question: "What is a brand's tone of voice?",
+                options: [
+                    "The volume at which the brand speaks",
+                    "The brand's personality expressed through words",
+                    "The jingle in commercials",
+                    "The font used in the logo"
+                ],
+                correctIndex: 1
+            }
         ],
         normal: [
-            // ... questions de difficulté normale ...
+            {
+                id: 7,
+                question: "How do you define logo usage rules?",
+                options: [
+                    "By allowing any color variation",
+                    "By specifying minimum size, clear space, and color variations",
+                    "By letting each designer decide",
+                    "By using it only in digital format"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 8,
+                question: "What is the difference between primary and secondary colors in a brand palette?",
+                options: [
+                    "Primary colors are for print, secondary for digital",
+                    "Primary colors are main brand colors, secondary support and complement them",
+                    "Primary colors are brighter than secondary",
+                    "There is no difference"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 9,
+                question: "What is the purpose of a brand style guide?",
+                options: [
+                    "To limit creativity",
+                    "To ensure consistency across all brand communications",
+                    "To make marketing more difficult",
+                    "To increase printing costs"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 10,
+                question: "How should a brand handle social media imagery?",
+                options: [
+                    "Use any image that looks good",
+                    "Follow the same visual guidelines as other brand materials",
+                    "Let each social media manager decide",
+                    "Only use stock photos"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 11,
+                question: "What is the role of negative space in logo design?",
+                options: [
+                    "To save on printing costs",
+                    "To create balance and improve readability",
+                    "To make the logo look bigger",
+                    "Negative space should always be avoided"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 12,
+                question: "Why is it important to define typography hierarchy?",
+                options: [
+                    "To make documents look more professional",
+                    "To guide the reader through content in order of importance",
+                    "To use as many fonts as possible",
+                    "It's not actually important"
+                ],
+                correctIndex: 1
+            }
         ],
         hard: [
-            // ... questions difficiles ...
+            {
+                id: 13,
+                question: "How does a guide evolve during rebranding?",
+                options: [
+                    "It remains unchanged",
+                    "It's completely deleted and recreated",
+                    "It's updated to reflect new visual and strategic directions",
+                    "Only the logo is changed"
+                ],
+                correctIndex: 2
+            },
+            {
+                id: 14,
+                question: "What is the difference between brand identity and brand image?",
+                options: [
+                    "They are the same thing",
+                    "Brand identity is how the company presents itself, brand image is how it's perceived",
+                    "Brand identity is for internal use, brand image for external",
+                    "Brand identity changes frequently, brand image stays the same"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 15,
+                question: "How do you handle brand guidelines for global markets?",
+                options: [
+                    "Create completely different guidelines for each market",
+                    "Maintain core elements while allowing for cultural adaptations",
+                    "Ignore cultural differences",
+                    "Let each country office decide"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 16,
+                question: "What is the role of semiotics in brand identity?",
+                options: [
+                    "It's the study of brand names",
+                    "It analyzes how meaning is created and communicated through signs and symbols",
+                    "It's a type of logo design",
+                    "It's not relevant to branding"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 17,
+                question: "How do you measure the effectiveness of brand guidelines?",
+                options: [
+                    "By the number of pages in the guide",
+                    "Through consistent application and brand recognition metrics",
+                    "By how strictly they're enforced",
+                    "It's not possible to measure"
+                ],
+                correctIndex: 1
+            },
+            {
+                id: 18,
+                question: "What is the importance of brand archetypes in identity?",
+                options: [
+                    "They limit creativity",
+                    "They provide a framework for consistent brand personality and messaging",
+                    "They're only useful for large corporations",
+                    "They're an outdated concept"
+                ],
+                correctIndex: 1
+            }
         ]
     };
 
@@ -78,16 +255,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonctions du quiz
     function startQuiz() {
-        // Mélanger les questions pour chaque niveau de difficulté
+        // Mélanger les questions pour chaque niveau de difficulté et en sélectionner une de chaque
         const easyQuestions = [...questions.easy].sort(() => Math.random() - 0.5).slice(0, 1);
         const normalQuestions = [...questions.normal].sort(() => Math.random() - 0.5).slice(0, 1);
         const hardQuestions = [...questions.hard].sort(() => Math.random() - 0.5).slice(0, 1);
         
-        quizQuestions = [...easyQuestions, ...normalQuestions, ...hardQuestions];
+        // Combiner les questions dans un ordre aléatoire
+        const allSelectedQuestions = [...easyQuestions, ...normalQuestions, ...hardQuestions];
+        quizQuestions = allSelectedQuestions.sort(() => Math.random() - 0.5);
+        
+        // Réinitialiser l'état du quiz
         userAnswers = new Array(quizQuestions.length).fill(null);
         currentQuestionIndex = 0;
         score = 0;
         
+        // Afficher la section quiz et charger la première question
         showSection('quiz');
         quizContainer.classList.remove('hidden');
         resultsSection.classList.add('hidden');
