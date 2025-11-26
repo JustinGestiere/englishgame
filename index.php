@@ -149,6 +149,46 @@ header('Content-Type: text/html; charset=utf-8');
                                     <li>Mortgaged properties don't collect rent.</li>
                                 </ul>
                             </div>
+                            
+                            <h3 class="sub green">5. Chance Cards</h3>
+                            <div class="space">
+                                <ul class="bullets">
+                                    <li>The player on your left reads the card.</li>
+                                    <li>Correct answer = bonus</li>
+                                    <li>Wrong answer = penalty.</li>
+                                    <li>The player places the card at the bottom of the deck.</li>
+                                </ul>
+                                
+                                <h4>Possible effects</h4>
+                                <ul class="bullets">
+                                    <li>Move to: Client Blockage / INPI / Creative Lab</li>
+                                    <li>Pay / receive money</li>
+                                    <li>Move forward / backward</li>
+                                    <li>Repairs / destroy</li>
+                                    <li>Pay taxes</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">6. INPI (similar to Jail)</h3>
+                            <div class="space">
+                                <h4>Going to INPI</h4>
+                                <ul class="bullets">
+                                    <li>By landing on the INPI space</li>
+                                    <li>OR being sent there by a Chance card.</li>
+                                </ul>
+                                
+                                <h4>Being in INPI</h4>
+                                <p>To leave INPI :</p>
+                                <ul class="bullets">
+                                    <li>Pay 100€ before rolling, OR</li>
+                                    <li>Attempt to roll a 1 or 6 (max 2 attempts).
+                                        <ul>
+                                            <li>Success → leave and move forward by that roll.</li>
+                                            <li>Failure after 2 attempts → pay €100 and move forward by the second roll.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
