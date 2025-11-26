@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadQuestion() {
         // Afficher la question et les options
-        questionText.textContent = quizQuestions[currentQuestionIndex].question;
+        questionElement.textContent = quizQuestions[currentQuestionIndex].question;
         optionsContainer.innerHTML = '';
         
         quizQuestions[currentQuestionIndex].options.forEach((option, index) => {
