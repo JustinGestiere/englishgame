@@ -5,87 +5,147 @@
     box-sizing: border-box;
 }
 
-/* Styles pour la section des règles */
-.rules {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+/* Brand Quest Theme Variables */
+:root {
+  --yellow: #f9c75b;
+  --magenta: #ff4fa8;
+  --green: #30c1a0;
+  --blue: #2f7bff;
+  --orange: #ff8d3c;
+  --text: #111;
+  --muted: #555;
+  --page-width: 800px;
+  --gutter: 36px;
 }
 
-.rules-title {
-    color: #306bff;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: 700;
+/* Page styling */
+.page {
+  width: 100%;
+  max-width: var(--page-width);
+  background: #fff;
+  border: 20px solid var(--yellow);
+  margin: 20px auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  display: none;
 }
 
+.page.active {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.page .inner {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Section Title */
+.section-title {
+  color: var(--magenta);
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Rule Items */
 .rules-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 40px 0;
 }
 
 .rule-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--blue);
+  padding-left: 20px;
+  margin-bottom: 15px;
 }
 
-.rule-number {
-    background-color: #306bff;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    flex-shrink: 0;
-    margin-top: 3px;
+.rule-item h3.sub {
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.rule-content h3 {
-    color: #306bff;
-    margin-bottom: 5px;
-    font-size: 18px;
+.rule-item p {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.rule-content p {
-    color: #555;
+/* Button Styling */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background-color: #1a5fd8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page {
+    border-width: 15px;
+    margin: 10px;
+  }
+  
+  .page .inner {
+    padding: 25px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .rule-item h3.sub {
+    font-size: 20px;
+  }
+  
+  .rule-item p {
     font-size: 15px;
-    line-height: 1.5;
+  }
 }
 
-/* Animation pour les règles */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* Active state for rules section */
+#rules {
+  display: none;
 }
 
-.rule-item {
-    animation: slideIn 0.3s ease-out forwards;
-    opacity: 0;
+#rules.active {
+  display: block;
 }
-
-.rule-item:nth-child(1) { animation-delay: 0.1s; }
-.rule-item:nth-child(2) { animation-delay: 0.2s; }
-.rule-item:nth-child(3) { animation-delay: 0.3s; }
-.rule-item:nth-child(4) { animation-delay: 0.4s; }
-.rule-item:nth-child(5) { animation-delay: 0.5s; }
 
 body {
     background-color: #306bff;

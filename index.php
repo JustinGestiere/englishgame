@@ -36,48 +36,39 @@ header('Content-Type: text/html; charset=utf-8');
             </section>
 
             <!-- Rules Section -->
-            <section id="rules" class="section">
-                <div class="rules">
-                    <h2 class="rules-title">Règles du jeu</h2>
+            <section id="rules" class="page">
+                <div class="inner">
+                    <h1 class="section-title">RULES OF THE GAME</h1>
+                    
                     <div class="rules-container">
                         <div class="rule-item">
-                            <div class="rule-number">1</div>
-                            <div class="rule-content">
-                                <h3>Déroulement du quiz</h3>
-                                <p>Le quiz est composé de 3 questions de difficulté croissante (facile, normale, difficile).</p>
-                            </div>
+                            <h3 class="sub">1. Quiz Format</h3>
+                            <p>The quiz consists of 3 questions of increasing difficulty (easy, normal, hard).</p>
                         </div>
+                        
                         <div class="rule-item">
-                            <div class="rule-number">2</div>
-                            <div class="rule-content">
-                                <h3>Réponses</h3>
-                                <p>Pour chaque question, sélectionnez la réponse qui vous semble correcte.</p>
-                            </div>
+                            <h3 class="sub">2. Answering Questions</h3>
+                            <p>For each question, select the answer that seems correct to you.</p>
                         </div>
+                        
                         <div class="rule-item">
-                            <div class="rule-number">3</div>
-                            <div class="rule-content">
-                                <h3>Validation</h3>
-                                <p>Vous devez répondre à toutes les questions pour obtenir votre score.</p>
-                            </div>
+                            <h3 class="sub">3. Completion</h3>
+                            <p>You must answer all questions to get your final score.</p>
                         </div>
+                        
                         <div class="rule-item">
-                            <div class="rule-number">4</div>
-                            <div class="rule-content">
-                                <h3>Victoire</h3>
-                                <p>Pour gagner, vous devez obtenir au moins 2 bonnes réponses sur 3.</p>
-                            </div>
+                            <h3 class="sub">4. Winning</h3>
+                            <p>To win, you need to get at least 2 correct answers out of 3.</p>
                         </div>
+                        
                         <div class="rule-item">
-                            <div class="rule-number">5</div>
-                            <div class="rule-content">
-                                <h3>Conseil</h3>
-                                <p>Prenez votre temps et bonne chance !</p>
-                            </div>
+                            <h3 class="sub">5. Tips</h3>
+                            <p>Take your time and good luck!</p>
                         </div>
                     </div>
-                    <div class="btn-group">
-                        <button id="backFromRules" class="btn" aria-label="Retour à l'accueil">Retour</button>
+                    
+                    <div class="btn-group" style="margin-top: 40px;">
+                        <button id="backFromRules" class="btn" aria-label="Back to home">Back</button>
                     </div>
                 </div>
             </section>

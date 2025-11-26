@@ -236,12 +236,26 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
-    // Fonctions de navigation
+    // Navigation functions
     function showSection(sectionToShow) {
-        document.querySelectorAll('.section').forEach(section => {
+        // Hide all sections
+        document.querySelectorAll('.section, .page').forEach(section => {
             section.classList.remove('active');
+            section.style.display = 'none';
         });
-        document.getElementById(sectionToShow).classList.add('active');
+        
+        // Show the requested section
+        const section = document.getElementById(sectionToShow);
+        if (section) {
+            section.classList.add('active');
+            section.style.display = 'block';
+            
+            // Special case for quiz section to show the container
+            if (sectionToShow === 'quiz') {
+                document.getElementById('quizContainer').style.display = 'block';
+                document.getElementById('results').style.display = 'none';
+            }
+        }
     }
 
     // Événements
