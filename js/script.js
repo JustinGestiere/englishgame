@@ -55,45 +55,45 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 id: 3,
-                question: "What is the purpose of a color palette in branding?",
+                question: "What is the difference between a primary and a secondary logo?",
                 options: [
-                    "To make the brand look pretty",
-                    "To ensure visual consistency across all brand materials",
-                    "To limit design creativity",
-                    "To match the CEO's favorite colors"
+                    "The secondary is always larger",
+                    "The secondary permanently replaces the primary",
+                    "The primary is used only on social media",
+                    "The primary is the main identity; the secondary is a variation"
                 ],
-                correctIndex: 1
+                correctIndex: 3
             },
             {
                 id: 4,
-                question: "What is typography in the context of branding?",
+                question: "Why define a color palette?",
                 options: [
-                    "The study of typewriters",
-                    "The art of arranging type to make written language legible and appealing",
-                    "A type of photography",
-                    "A printing technique"
+                    "To reduce printing costs",
+                    "To ensure the brand's visual consistency",
+                    "To limit designers' creativity",
+                    "To block competitors from using certain colors"
                 ],
                 correctIndex: 1
             },
             {
                 id: 5,
-                question: "Why is consistency important in branding?",
+                question: "What is the purpose of typography?",
                 options: [
-                    "It makes the brand look professional and trustworthy",
-                    "It's easier for designers",
-                    "It's required by law",
-                    "It saves money on printing"
+                    "To optimize SEO",
+                    "To give text a visual personality and improve readability",
+                    "To turn text into images",
+                    "To speed up website loading"
                 ],
-                correctIndex: 0
+                correctIndex: 1
             },
             {
                 id: 6,
-                question: "What is a brand's tone of voice?",
+                question: "What does 'brand voice' mean?",
                 options: [
-                    "The volume at which the brand speaks",
-                    "The brand's personality expressed through words",
-                    "The jingle in commercials",
-                    "The font used in the logo"
+                    "The brand's official soundtrack",
+                    "The style and tone used in communication",
+                    "The voice of the person who reads ads",
+                    "A tool to analyze customer comments"
                 ],
                 correctIndex: 1
             }
@@ -103,65 +103,65 @@ document.addEventListener('DOMContentLoaded', function() {
                 id: 7,
                 question: "How do you define logo usage rules?",
                 options: [
-                    "By allowing any color variation",
-                    "By specifying minimum size, clear space, and color variations",
-                    "By letting each designer decide",
-                    "By using it only in digital format"
+                    "By choosing only one color",
+                    "By specifying sizes, spacing, restrictions, and variations",
+                    "By letting each designer use it freely",
+                    "By imposing a single mandatory format"
                 ],
                 correctIndex: 1
             },
             {
                 id: 8,
-                question: "What is the difference between primary and secondary colors in a brand palette?",
+                question: "Why aim for visual consistency across platforms?",
                 options: [
-                    "Primary colors are for print, secondary for digital",
-                    "Primary colors are main brand colors, secondary support and complement them",
-                    "Primary colors are brighter than secondary",
-                    "There is no difference"
+                    "To reduce the number of graphic files",
+                    "To strengthen brand recognition",
+                    "To prevent dynamic visuals",
+                    "To limit communication channels"
                 ],
                 correctIndex: 1
             },
             {
                 id: 9,
-                question: "What is the purpose of a brand style guide?",
+                question: "What is a moodboard?",
                 options: [
-                    "To limit creativity",
-                    "To ensure consistency across all brand communications",
-                    "To make marketing more difficult",
-                    "To increase printing costs"
+                    "Photo-editing software",
+                    "A music playlist",
+                    "A chart tracking customer emotions",
+                    "A visual collage defining a brand's aesthetic world"
                 ],
-                correctIndex: 1
+                correctIndex: 3
             },
             {
                 id: 10,
-                question: "How should a brand handle social media imagery?",
+                question: "Difference between primary, secondary and accent colors?",
                 options: [
-                    "Use any image that looks good",
-                    "Follow the same visual guidelines as other brand materials",
-                    "Let each social media manager decide",
-                    "Only use stock photos"
+                    "Accent colors are only for logos",
+                    "Primary colors are forbidden",
+                    "Primary are main, secondary support, accents highlight",
+                    "Secondary replace primary colors"
                 ],
-                correctIndex: 1
+                correctIndex: 2
             },
             {
                 id: 11,
-                question: "What is the role of negative space in logo design?",
+                question: "How do you define typographic hierarchy?",
                 options: [
-                    "To save on printing costs",
-                    "To create balance and improve readability",
-                    "To make the logo look bigger",
-                    "Negative space should always be avoided"
+                    "By organizing sizes, weights, and roles",
+                    "By using only capital letters",
+                    "By choosing a single font size",
+                    "By replacing text with images"
                 ],
-                correctIndex: 1
+                correctIndex: 0
             },
             {
                 id: 12,
-                question: "Why is it important to define typography hierarchy?",
+                question: "How do you include iconography rules?",
                 options: [
-                    "To make documents look more professional",
-                    "To guide the reader through content in order of importance",
-                    "To use as many fonts as possible",
-                    "It's not actually important"
+                    "By allowing only vector illustrations",
+                    "By defining style, framing, colors, and usage",
+                    "By banning photographs",
+                    "By using random images"
                 ],
                 correctIndex: 1
             }
@@ -171,65 +171,65 @@ document.addEventListener('DOMContentLoaded', function() {
                 id: 13,
                 question: "How does a guide evolve during rebranding?",
                 options: [
-                    "It remains unchanged",
-                    "It's completely deleted and recreated",
-                    "It's updated to reflect new visual and strategic directions",
-                    "Only the logo is changed"
+                    "It becomes useless",
+                    "It adapts to the new identity and updates all rules",
+                    "It is replaced by an internal website",
+                    "It serves only as an archive"
                 ],
-                correctIndex: 2
+                correctIndex: 1
             },
             {
                 id: 14,
-                question: "What is the difference between brand identity and brand image?",
+                question: "How does editorial tone influence user experience?",
                 options: [
-                    "They are the same thing",
-                    "Brand identity is how the company presents itself, brand image is how it's perceived",
-                    "Brand identity is for internal use, brand image for external",
-                    "Brand identity changes frequently, brand image stays the same"
+                    "It shapes brand perception and audience relationship",
+                    "It changes website loading speed",
+                    "It controls paid advertising",
+                    "It auto-generates content"
                 ],
-                correctIndex: 1
+                correctIndex: 0
             },
             {
                 id: 15,
-                question: "How do you handle brand guidelines for global markets?",
+                question: "How do you formalize prohibited logo usages?",
                 options: [
-                    "Create completely different guidelines for each market",
-                    "Maintain core elements while allowing for cultural adaptations",
-                    "Ignore cultural differences",
-                    "Let each country office decide"
+                    "By removing alternate versions",
+                    "By banning all usage",
+                    "By giving only verbal rules",
+                    "By showing clear don'ts (wrong colors, distortions, etc.)"
                 ],
-                correctIndex: 1
+                correctIndex: 3
             },
             {
                 id: 16,
-                question: "What is the role of semiotics in brand identity?",
+                question: "How does a modular system reinforce consistency?",
                 options: [
-                    "It's the study of brand names",
-                    "It analyzes how meaning is created and communicated through signs and symbols",
-                    "It's a type of logo design",
-                    "It's not relevant to branding"
+                    "It prevents design evolution",
+                    "It forces everyone to use the same document",
+                    "It eliminates the need for designers",
+                    "It provides reusable grids and components"
                 ],
-                correctIndex: 1
+                correctIndex: 3
             },
             {
                 id: 17,
-                question: "How do you measure the effectiveness of brand guidelines?",
+                question: "How do you include accessibility guidelines?",
                 options: [
-                    "By the number of pages in the guide",
-                    "Through consistent application and brand recognition metrics",
-                    "By how strictly they're enforced",
-                    "It's not possible to measure"
+                    "By banning decorative fonts",
+                    "By using highly detailed visuals",
+                    "By limiting bright colors",
+                    "By defining contrast, readability, and text alternatives"
                 ],
-                correctIndex: 1
+                correctIndex: 3
             },
             {
                 id: 18,
-                question: "What is the importance of brand archetypes in identity?",
+                question: "What metrics help evaluate a brand style guide?",
                 options: [
-                    "They limit creativity",
-                    "They provide a framework for consistent brand personality and messaging",
-                    "They're only useful for large corporations",
-                    "They're an outdated concept"
+                    "The number of pages",
+                    "Consistency across materials & brand recognition",
+                    "Annual marketing budget",
+                    "Number of logos created by teams"
                 ],
                 correctIndex: 1
             }
