@@ -55,21 +55,48 @@
 .rules-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 35px;
   margin: 40px 0;
 }
 
 .rule-item {
   border-left: 4px solid var(--blue);
   padding-left: 20px;
+  padding-bottom: 25px;
   margin-bottom: 15px;
+}
+
+.rule-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .rule-item h3.sub {
   color: var(--blue);
   font-size: 22px;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.rule-item h3.sub:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--magenta);
+}
+
+.rule-item h4.sub {
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -78,7 +105,91 @@
   color: var(--text);
   font-size: 16px;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 15px;
+}
+
+/* Lists */
+.bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 20px 15px;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.bullets li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--magenta);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.goal-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0 15px 15px;
+}
+
+.goal-list > li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.goal-list > li:before {
+  content: counter(list-item) '.';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.space {
+  background: rgba(249, 199, 91, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  border-left: 3px solid var(--orange);
+}
+
+.space-title {
+  color: var(--orange) !important;
+  font-size: 18px !important;
+  margin: 0 0 10px 0 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  padding-bottom: 5px !important;
+  border-bottom: 1px dashed rgba(0,0,0,0.1) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rule-item {
+    padding-left: 15px;
+  }
+  
+  .rule-item h3.sub {
+    font-size: 20px;
+  }
+  
+  .rule-item p, .bullets li {
+    font-size: 15px;
+  }
+  
+  .space {
+    padding: 12px;
+  }
 }
 
 /* Button Styling */

@@ -42,28 +42,77 @@ header('Content-Type: text/html; charset=utf-8');
                     
                     <div class="rules-container">
                         <div class="rule-item">
-                            <h3 class="sub">1. Quiz Format</h3>
-                            <p>The quiz consists of 3 questions of increasing difficulty (easy, normal, hard).</p>
+                            <h3 class="sub">1. GAME GOAL</h3>
+                            <p>In <strong>The Brand Quest</strong>, players aim to win by fulfilling one of the following conditions:</p>
+                            <ol class="goal-list">
+                                <li>Be the last player not bankrupt, or</li>
+                                <li>Own all 4 properties of your agency's color:
+                                    <ul>
+                                        <li><strong>Level 1</strong> — A house on each property</li>
+                                        <li><strong>Level 2</strong> — A level-2 skill (building) on each property</li>
+                                    </ul>
+                                </li>
+                            </ol>
                         </div>
                         
                         <div class="rule-item">
-                            <h3 class="sub">2. Answering Questions</h3>
-                            <p>For each question, select the answer that seems correct to you.</p>
+                            <h3 class="sub">2. PREPARATION</h3>
+                            <h4 class="sub green">Equipment</h4>
+                            <ul class="bullets">
+                                <li>Game board, rules booklet, 1 die</li>
+                                <li>4 pieces (Agencies)</li>
+                                <li>Banknotes: 40×25€, 28×50€, 20×100€, 12×200€</li>
+                                <li>16 property cards</li>
+                                <li>20 chance cards</li>
+                                <li>32 acquisition tokens + 1 creative lab token</li>
+                                <li>Bank (managed by one player)</li>
+                                <li>Online bonus: Client Blockage Quiz (via QR)</li>
+                            </ul>
+                            
+                            <h4 class="sub green">The bank</h4>
+                            <ul class="bullets">
+                                <li>Manages money, cards, taxes and building construction.</li>
+                                <li>May play but must keep personal money separate from bank money.</li>
+                            </ul>
                         </div>
                         
                         <div class="rule-item">
-                            <h3 class="sub">3. Completion</h3>
-                            <p>You must answer all questions to get your final score.</p>
+                            <h3 class="sub">3. SETTING UP THE GAME</h3>
+                            <ul class="bullets">
+                                <li>Each player receives <strong>800€</strong> (2×200, 2×100, 2×50, 4×25).</li>
+                                <li>All pieces start on the "Start" space.</li>
+                                <li>Shuffle the chance cards and place them face down.</li>
+                                <li>The bank prepares the bills and the cards for each set.</li>
+                            </ul>
                         </div>
                         
                         <div class="rule-item">
-                            <h3 class="sub">4. Winning</h3>
-                            <p>To win, you need to get at least 2 correct answers out of 3.</p>
-                        </div>
-                        
-                        <div class="rule-item">
-                            <h3 class="sub">5. Tips</h3>
-                            <p>Take your time and good luck!</p>
+                            <h3 class="sub">4. GAMEPLAY</h3>
+                            <h4 class="sub green">1. Game turn</h4>
+                            <ul class="bullets">
+                                <li>The player rolls the die, moves their token and applies the effect of the space.</li>
+                                <li>Rolling a <strong>6</strong> = roll again.</li>
+                                <li>3 consecutive doubles = go to the "Client Blockage" space.</li>
+                                <li>Turns proceed clockwise.</li>
+                            </ul>
+                            
+                            <h4 class="sub green">2. Board spaces</h4>
+                            
+                            <div class="space">
+                                <h4 class="space-title">"Start" space</h4>
+                                <ul class="bullets">
+                                    <li>Passing or landing on it → collect <strong>200€</strong>.</li>
+                                    <li>No effect if you stay on it or are sent to it by a card.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space">
+                                <h4 class="space-title">Unpurchased Property</h4>
+                                <ul class="bullets">
+                                    <li>You may buy the property at the listed price. If bought, your turn ends.</li>
+                                    <li>If you refuse → your turn ends with no purchase.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
