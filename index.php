@@ -22,8 +22,8 @@ header('Content-Type: text/html; charset=utf-8');
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <div class="container">
-        <header>
-            <h1>The Brand Quest</h1>
+        <header class="logo-container">
+            <img src="images/logo.png" alt="The Brand Quest" class="logo">
         </header>
 
         <main id="main-content">
