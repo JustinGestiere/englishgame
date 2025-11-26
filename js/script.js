@@ -423,10 +423,12 @@ document.addEventListener('DOMContentLoaded', function() {
             feedback.appendChild(answerElement);
         });
         
-        // Afficher la section des résultats
-        quizContainer.classList.add('hidden');
-        resultsSection.classList.remove('hidden');
-        resultsSection.style.display = 'block';
+        // Afficher la section des résultats et masquer le quiz
+        if (quizContainer) quizContainer.style.display = 'none';
+        if (resultsSection) {
+            resultsSection.style.display = 'block';
+            resultsSection.classList.remove('hidden');
+        }
         
         // Focus sur le bouton de redémarrage pour l'accessibilité
         restartQuizBtn.focus();
