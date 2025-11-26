@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const backFromRulesBtn = document.getElementById('backFromRules');
     const backBtn = document.getElementById('backBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const finishBtn = document.getElementById('finishBtn');
     const restartQuizBtn = document.getElementById('restartQuiz');
     const backToHomeBtn = document.getElementById('backToHome');
     
@@ -264,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
     backFromRulesBtn.addEventListener('click', () => showSection('home'));
     backBtn.addEventListener('click', previousQuestion);
     nextBtn.addEventListener('click', nextQuestion);
+    finishBtn.addEventListener('click', showResults);
     restartQuizBtn.addEventListener('click', startQuiz);
     backToHomeBtn.addEventListener('click', () => showSection('home'));
 
@@ -286,45 +288,38 @@ document.addEventListener('DOMContentLoaded', function() {
         // Afficher la section quiz et charger la première question
         showSection('quiz');
         quizContainer.classList.remove('hidden');
-        resultsSection.classList.add('hidden');
-        loadQuestion();
+        // Mettre à jour les boutons de navigation
+        backBtn.classList.toggle('hidden', currentQuestionIndex === 0);
+        nextBtn.classList.toggle('hidden', currentQuestionIndex === quizQuestions.length - 1);
+        finishBtn.classList.toggle('hidden', currentQuestionIndex !== quizQuestions.length - 1);
+        
+        // Focus sur la première option pour l'accessibilité
+        if (optionsContainer.firstChild) {
+            optionsContainer.firstChild.focus();
+        }
     }
 
     function loadQuestion() {
-        const question = quizQuestions[currentQuestionIndex];
-        questionElement.textContent = question.question;
-        progressElement.textContent = `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
-        
-        // Mettre à jour les options
+        // Afficher la question et les options
+        questionText.textContent = quizQuestions[currentQuestionIndex].question;
         optionsContainer.innerHTML = '';
-        question.options.forEach((option, index) => {
+        
+        quizQuestions[currentQuestionIndex].options.forEach((option, index) => {
             const optionElement = document.createElement('div');
             optionElement.className = 'option';
             optionElement.textContent = option;
-            optionElement.setAttribute('role', 'radio');
-            optionElement.setAttribute('aria-checked', 'false');
-            optionElement.setAttribute('tabindex', '0');
-            
-            if (userAnswers[currentQuestionIndex] === index) {
-                optionElement.classList.add('selected');
-                optionElement.setAttribute('aria-checked', 'true');
-                selectedOption = index;
-            }
-            
             optionElement.addEventListener('click', () => selectOption(optionElement, index));
-            optionElement.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    selectOption(optionElement, index);
-                }
-            });
             
             optionsContainer.appendChild(optionElement);
         });
         
+        // Afficher la section quiz et charger la première question
+        showSection('quiz');
+        quizContainer.classList.remove('hidden');
         // Mettre à jour les boutons de navigation
         backBtn.classList.toggle('hidden', currentQuestionIndex === 0);
-        nextBtn.textContent = currentQuestionIndex === quizQuestions.length - 1 ? 'Finish' : 'Next';
+        nextBtn.classList.toggle('hidden', currentQuestionIndex === quizQuestions.length - 1);
+        finishBtn.classList.toggle('hidden', currentQuestionIndex !== quizQuestions.length - 1);
         
         // Focus sur la première option pour l'accessibilité
         if (optionsContainer.firstChild) {

@@ -46,7 +46,7 @@ header('Content-Type: text/html; charset=utf-8');
                             <p>In <strong>The Brand Quest</strong>, players aim to win by fulfilling one of the following conditions:</p>
                             <ol class="goal-list">
                                 <li>Be the last player not bankrupt, or</li>
-                                <li>Own all 4 properties of your agency's color:
+                                <li>Own all 4 family parts agency's color, either:
                                     <ul>
                                         <li><strong>Level 1</strong> — A house on each property</li>
                                         <li><strong>Level 2</strong> — A level-2 skill (building) on each property</li>
@@ -57,7 +57,7 @@ header('Content-Type: text/html; charset=utf-8');
                         
                         <div class="rule-item">
                             <h2 class="sub">2. PREPARATION</h2>
-                            <h3 class="sub green">Equipment</h3>
+                            <h3 class="sub green">Equipments</h3>
                             <ul class="bullets">
                                 <li>Game board, rules booklet, 1 die</li>
                                 <li>4 pieces (Agencies)</li>
@@ -133,6 +133,7 @@ header('Content-Type: text/html; charset=utf-8');
                     <div class="navigation">
                         <button id="backBtn" class="btn hidden" aria-label="Previous question">Previous</button>
                         <button id="nextBtn" class="btn" aria-label="Next question">Next</button>
+                        <button id="finishBtn" class="btn hidden" aria-label="Finish the quiz">Finish</button>
                     </div>
                 </div>
 
