@@ -373,9 +373,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Afficher uniquement le score
+        // Afficher le score et le message de félicitations
         const percentage = Math.round((score / quizQuestions.length) * 100);
-        scoreText.textContent = `Score : ${score}/3`;
+        const isSuccess = percentage >= 66;
+        
+        resultTitle.textContent = isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau';
+        resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
+        scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
         
         // Afficher les réponses
         feedback.innerHTML = '';
