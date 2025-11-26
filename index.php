@@ -113,6 +113,42 @@ header('Content-Type: text/html; charset=utf-8');
                                     <li>If you refuse → your turn ends with no purchase.</li>
                                 </ul>
                             </div>
+                            
+                            <div class="space">
+                                <h3 class="space-title">Rent & Properties</h3>
+                                <ul class="bullets">
+                                    <li>Landing on another player's Family space → pay that player's rent of €100</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">3. Construction</h3>
+                            <div class="space">
+                                <h4>Acquisition token & cards skill level 2</h4>
+                                <ul class="bullets">
+                                    <li>Build evenly: max 1 acquisition token per row, per person</li>
+                                    <li>You may only buy on your brief client.</li>
+                                </ul>
+                                
+                                <h4>Requirements</h4>
+                                <ul class="bullets">
+                                    <li>Level 1 (a total of 4 acquisition tokens): 850€</li>
+                                    <li>Level 2 (skills): 1650€</li>
+                                </ul>
+                                
+                                <h4>Costs</h4>
+                                <ul class="bullets">
+                                    <li>Maximum 4 acquisition tokens.</li>
+                                    <li>Level 2 skills can only be obtained if an acquisition token has already been purchased.</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">4. Mortgages</h3>
+                            <div class="space">
+                                <ul class="bullets">
+                                    <li>Return the property card to the bank → receive its mortgage value.</li>
+                                    <li>Mortgaged properties don't collect rent.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
