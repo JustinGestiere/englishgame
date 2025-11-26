@@ -363,19 +363,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return; // Ne pas avancer si aucune option n'est sélectionnée
         }
         
-        // Si c'est l'avant-dernière question, on passe directement aux résultats
-        if (currentQuestionIndex === quizQuestions.length - 2) {
-            // On enregistre la réponse de l'avant-dernière question
-            userAnswers[currentQuestionIndex] = selectedOption;
-            // On affiche directement les résultats
-            showResults();
-            return;
-        }
-        
         if (currentQuestionIndex < quizQuestions.length - 1) {
             currentQuestionIndex++;
             selectedOption = userAnswers[currentQuestionIndex];
             loadQuestion();
+        } else {
+            showResults();
         }
     }
 
