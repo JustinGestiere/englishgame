@@ -373,58 +373,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Afficher les résultats
+        // Afficher uniquement le score
         const percentage = Math.round((score / quizQuestions.length) * 100);
-        const isSuccess = percentage >= 66;
+        scoreText.textContent = `Score : ${score}/3`;
         
-        resultTitle.textContent = isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau';
-        resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
-        scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
-        
-        // Afficher le feedback et les bonnes réponses
+        // Afficher les réponses
         feedback.innerHTML = '';
-        
-        // Ajouter un résumé des réponses
-        const summary = document.createElement('div');
-        summary.className = 'answers-summary';
         
         quizQuestions.forEach((question, index) => {
             const userAnswerIndex = userAnswers[index];
             const isCorrect = userAnswerIndex === question.correctIndex;
+            const userAnswer = userAnswerIndex !== null && userAnswerIndex !== undefined 
+                ? question.options[userAnswerIndex] 
+                : 'Pas de réponse';
             
-            if (!isCorrect) {
-                const questionElement = document.createElement('div');
-                questionElement.className = 'incorrect-answer';
-                questionElement.innerHTML = `
-                    <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                    <p class="correct-option">✅ Réponse correcte : ${question.options[question.correctIndex]}</p>
-                `;
-                summary.appendChild(questionElement);
-            }
+            const answerElement = document.createElement('div');
+            answerElement.className = isCorrect ? 'correct-answer' : 'incorrect-answer';
+            
+            answerElement.innerHTML = `
+                <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                <p>${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}</p>
+            `;
+            
+            feedback.appendChild(answerElement);
         });
-        
-        feedback.appendChild(summary);
-        
-        // Afficher un message de félicitations ou les bonnes réponses
-        const message = document.createElement('div');
-        message.className = 'result-message';
-        
-        if (isSuccess) {
-            message.innerHTML = '<p>Excellent travail ! Vous avez une bonne compréhension des guides de style.</p>';
-        } else {
-            // Afficher directement les bonnes réponses
-            quizQuestions.forEach((question, index) => {
-                const correctOption = question.options[question.correctIndex];
-                const questionElement = document.createElement('div');
-                questionElement.className = 'correct-answer';
-                questionElement.innerHTML = `
-                    <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                    <p class="correct-option">✅ Réponse correcte : ${correctOption}</p>
-                `;
-                message.appendChild(questionElement);
-            });
-        }
-        feedback.insertBefore(message, summary);
         
         // Afficher la section des résultats
         quizContainer.classList.add('hidden');
