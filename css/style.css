@@ -71,7 +71,7 @@
   padding-bottom: 0;
 }
 
-.rule-item h3.sub {
+.rule-item h2.sub {
   color: #e82d88
   font-size: 22px;
   font-weight: 700;
@@ -82,7 +82,7 @@
   padding-bottom: 8px;
 }
 
-.rule-item h3.sub:after {
+.rule-item h2.sub:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -92,7 +92,7 @@
   background: #e82d88;
 }
 
-.rule-item h4.sub {
+.rule-item h3.sub {
   color: #44b69c;
   font-size: 18px;
   font-weight: 600;
@@ -179,7 +179,7 @@
     padding-left: 15px;
   }
   
-  .rule-item h3.sub {
+  .rule-item h2.sub {
     font-size: 20px;
   }
   
@@ -240,7 +240,7 @@
     font-size: 28px;
   }
   
-  .rule-item h3.sub {
+  .rule-item h2.sub {
     font-size: 20px;
   }
   
