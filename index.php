@@ -42,7 +42,7 @@ header('Content-Type: text/html; charset=utf-8');
                     
                     <div class="rules-container">
                         <div class="rule-item">
-                            <h2 class="sub">1. GAME GOAL</h2>
+                            <h2 class="sub">GAME GOAL</h2>
                             <p>In <strong>The Brand Quest</strong>, players aim to win by fulfilling one of the following conditions:</p>
                             <ol class="goal-list">
                                 <li>Be the last player not bankrupt, or</li>
@@ -56,7 +56,7 @@ header('Content-Type: text/html; charset=utf-8');
                         </div>
                         
                         <div class="rule-item">
-                            <h2 class="sub">2. PREPARATION</h2>
+                            <h2 class="sub">PREPARATION</h2>
                             <h3 class="sub green">Equipments</h3>
                             <ul class="bullets">
                                 <li>Game board, rules booklet, 1 die</li>
@@ -77,7 +77,7 @@ header('Content-Type: text/html; charset=utf-8');
                         </div>
                         
                         <div class="rule-item">
-                            <h2 class="sub">3. SETTING UP THE GAME</h2>
+                            <h3 class="sub">SETTING UP THE GAME</h3>
                             <ul class="bullets">
                                 <li>Each player receives <strong>800€</strong> (2×200, 2×100, 2×50, 4×25).</li>
                                 <li>All pieces start on the "Start" space.</li>
@@ -87,7 +87,7 @@ header('Content-Type: text/html; charset=utf-8');
                         </div>
                         
                         <div class="rule-item">
-                            <h2 class="sub">4. GAMEPLAY</h2>
+                            <h2 class="sub">GAMEPLAY</h2>
                             <h3 class="sub green">1. Game turn</h3>
                             <ul class="bullets">
                                 <li>The player rolls the die, moves their token and applies the effect of the space.</li>
