@@ -285,18 +285,17 @@ document.addEventListener('DOMContentLoaded', function() {
         currentQuestionIndex = 0;
         score = 0;
         
-        // Afficher la section quiz et charger la première question
+        // Afficher la section quiz
         showSection('quiz');
         quizContainer.classList.remove('hidden');
+        
+        // Charger la première question
+        loadQuestion();
+        
         // Mettre à jour les boutons de navigation
         backBtn.classList.toggle('hidden', currentQuestionIndex === 0);
         nextBtn.classList.toggle('hidden', currentQuestionIndex === quizQuestions.length - 1);
         finishBtn.classList.toggle('hidden', currentQuestionIndex !== quizQuestions.length - 1);
-        
-        // Focus sur la première option pour l'accessibilité
-        if (optionsContainer.firstChild) {
-            optionsContainer.firstChild.focus();
-        }
     }
 
     function loadQuestion() {
