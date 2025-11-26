@@ -39,13 +39,16 @@ header('Content-Type: text/html; charset=utf-8');
             <section id="rules" class="section">
                 <div class="rules">
                     <h2>Game Rules</h2>
-                    <ol>
-                        <li>The quiz consists of 3 questions of increasing difficulty (easy, normal, hard).</li>
-                        <li>For each question, select the answer that seems correct to you.</li>
-                        <li>You must answer all questions to get your score.</li>
-                        <li>To win, you need to get at least 2 out of 3 answers correct.</li>
-                        <li>Take your time and good luck!</li>
-                    </ol>
+                    <div class="rules-images">
+                        <img src="images/1.png" alt="Rule 1" class="rule-image">
+                        <img src="images/2.png" alt="Rule 2" class="rule-image">
+                        <img src="images/3.png" alt="Rule 3" class="rule-image">
+                        <img src="images/4.png" alt="Rule 4" class="rule-image">
+                        <img src="images/5.png" alt="Rule 5" class="rule-image">
+                        <img src="images/6.png" alt="Rule 6" class="rule-image">
+                        <img src="images/7.png" alt="Rule 7" class="rule-image">
+                        <img src="images/8.png" alt="Rule 8" class="rule-image">
+                    </div>
                     <div class="btn-group">
                         <button id="backFromRules" class="btn" aria-label="Back to home">Back</button>
                     </div>
