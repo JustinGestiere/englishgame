@@ -386,9 +386,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const percentage = Math.round((score / quizQuestions.length) * 100);
         const isSuccess = percentage >= 66;
         
-        resultTitle.textContent = isSuccess ? '🎉 Congratulations!' : '😕 Try again';
+        resultTitle.textContent = isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau';
         resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
-        scoreText.textContent = `Your score: ${score} out of ${quizQuestions.length}`;
+        scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
         
         // Afficher les réponses
         feedback.innerHTML = '';
@@ -398,14 +398,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const isCorrect = userAnswerIndex === question.correctIndex;
             const userAnswer = userAnswerIndex !== null && userAnswerIndex !== undefined 
                 ? question.options[userAnswerIndex] 
-                : 'No answer';
+                : 'Pas de réponse';
             
             const answerElement = document.createElement('div');
             answerElement.className = isCorrect ? 'correct-answer' : 'incorrect-answer';
             
             answerElement.innerHTML = `
                 <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                <p>${isCorrect ? '✅' : '❌'} Your answer: ${userAnswer}</p>
+                <p>${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}</p>
+                ${!isCorrect ? `<p>✅ Réponse correcte : ${question.options[question.correctIndex]}</p>` : ''}
             `;
             
             feedback.appendChild(answerElement);
@@ -414,6 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Afficher la section des résultats
         quizContainer.classList.add('hidden');
         resultsSection.classList.remove('hidden');
+        resultsSection.style.display = 'block';
         
         // Focus sur le bouton de redémarrage pour l'accessibilité
         restartQuizBtn.focus();
