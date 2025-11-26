@@ -189,6 +189,79 @@ header('Content-Type: text/html; charset=utf-8');
                                     </li>
                                 </ul>
                             </div>
+                            
+                            <h3 class="sub green">7. Creative Lab</h3>
+                            <div class="space">
+                                <h4>Going to the Creative Lab</h4>
+                                <ul class="bullets">
+                                    <li>By landing on the Creative Lab space</li>
+                                    <li>OR via a Chance card</li>
+                                </ul>
+                                
+                                <h4>Being in the Creative Lab</h4>
+                                <ul class="bullets">
+                                    <li>Place the "Creative Lab" token on one of your collectable spaces.</li>
+                                    <li>It will replace an acquisition until a player lands on the "Creative Lab" space.</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">8. Client Blockage</h3>
+                            <div class="space">
+                                <h4>Going to Client Blockage</h4>
+                                <h4>Going to Client Blockage</h4>
+                                <ul class="bullets">
+                                    <li>By landing on the Client Blockage space</li>
+                                    <li>Through a Chance card</li>
+                                    <li>Rolling 3 consecutive doubles
+                                        <ul>
+                                            <li>Without passing "Start" space → no 200€</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                                <h4>Two ways to get out:</h4>
+                                <ol class="bullets">
+                                    <li>Online Quiz: get 2 out of 3 correct → released.</li>
+                                    <li>If the quiz is unavailable → try rolling a 6 (3 attempts).
+                                        <ul>
+                                            <li>Success → leave and move forward by the roll.</li>
+                                            <li>Failure → leave and move forward using the 3rd roll.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                
+                                <h4>During blockage:</h4>
+                                <ul class="bullets">
+                                    <li>You may still collect rent and sell properties.</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">9. Bankruptcy</h3>
+                            <div class="space">
+                                <p>A player is eliminated if they cannot pay even after:</p>
+                                <ul class="bullets">
+                                    <li>Mortgaging</li>
+                                </ul>
+                                
+                                <h4>Consequences:</h4>
+                                <ul class="bullets">
+                                    <li>Debt to another player → all money goes to that player.</li>
+                                    <li>Debt to the bank → cards returned to the bank.</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="sub green">10. End of the Game</h3>
+                            <div class="space">
+                                <p>The game ends when:</p>
+                                <ol class="bullets">
+                                    <li>Only one player is not bankrupt, or</li>
+                                    <li>A player owns all 4 family sets of their agency color
+                                        <ul>
+                                            <li>That player wins the game.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                     
