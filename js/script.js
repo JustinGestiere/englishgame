@@ -401,10 +401,13 @@ document.addEventListener('DOMContentLoaded', function() {
         resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
         scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
         
-        // Afficher les réponses
+        // Afficher les réponses (sauf la dernière question)
         feedback.innerHTML = '';
         
-        quizQuestions.forEach((question, index) => {
+        // Ne pas afficher la dernière question dans les résultats
+        const questionsToShow = quizQuestions.slice(0, -1);
+        
+        questionsToShow.forEach((question, index) => {
             const userAnswerIndex = userAnswers[index];
             const isCorrect = userAnswerIndex === question.correctIndex;
             const userAnswer = userAnswerIndex !== null && userAnswerIndex !== undefined 
@@ -422,6 +425,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             feedback.appendChild(answerElement);
         });
+        
+        // Ajouter un message si toutes les questions sauf une sont affichées
+        if (quizQuestions.length > 1) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'info-message';
+            messageElement.textContent = `La dernière question n'est pas incluse dans les résultats.`;
+            feedback.appendChild(messageElement);
+        }
         
         // Afficher la section des résultats
         quizContainer.classList.add('hidden');
