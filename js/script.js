@@ -363,7 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function showResults() {
         // Calculer le score
         score = 0;
-        let resultsHtml = '';
         
         quizQuestions.forEach((question, index) => {
             const userAnswer = userAnswers[index];
@@ -372,33 +371,58 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isCorrect) {
                 score++;
             }
-            
-            resultsHtml += `
-                <div class="result-item">
-                    <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                    <p>Your answer: ${question.options[userAnswer]}</p>
-                    <p>${isCorrect ? '✅ Correct!' : `❌ Incorrect. The correct answer is: ${question.options[question.correctIndex]}`}</p>
-                </div>
-                <hr>
-            `;
         });
         
         // Afficher les résultats
         const percentage = Math.round((score / quizQuestions.length) * 100);
         const isSuccess = percentage >= 66;
         
-        resultTitle.textContent = isSuccess ? '🎉 Congratulations!' : '😕 Try Again';
+        resultTitle.textContent = isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau';
         resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
-        scoreText.textContent = `You scored ${score} out of ${quizQuestions.length} (${percentage}%)`;
-        feedbackElement.innerHTML = resultsHtml;
+        scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
         
+        // Afficher le feedback et les bonnes réponses
+        feedback.innerHTML = '';
+        
+        // Ajouter un résumé des réponses
+        const summary = document.createElement('div');
+        summary.className = 'answers-summary';
+        
+        quizQuestions.forEach((question, index) => {
+            const userAnswerIndex = userAnswers[index];
+            const isCorrect = userAnswerIndex === question.correctIndex;
+            
+            if (!isCorrect) {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'incorrect-answer';
+                questionElement.innerHTML = `
+                    <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                    <p class="correct-option">✅ Réponse correcte : ${question.options[question.correctIndex]}</p>
+                `;
+                summary.appendChild(questionElement);
+            }
+        });
+        
+        feedback.appendChild(summary);
+        
+        // Afficher un message de félicitations ou d'encouragement
+        const message = document.createElement('p');
+        message.className = 'result-message';
+        message.textContent = isSuccess 
+            ? "Excellent travail ! Vous avez une bonne compréhension des guides de style."
+            : "Consultez les bonnes réponses ci-dessous et réessayez pour améliorer votre score !";
+        feedback.insertBefore(message, summary);
+        
+        // Afficher la section des résultats
         quizContainer.classList.add('hidden');
         resultsSection.classList.remove('hidden');
+        
+        // Focus sur le bouton de redémarrage pour l'accessibilité
+        restartQuizBtn.focus();
     }
 
     // Gestion du clavier pour l'accessibilité
     document.addEventListener('keydown', function(e) {
-        // Ne traite les événements clavier que si nous sommes dans la section quiz
         if (!quizSection.classList.contains('active')) return;
         
         const options = Array.from(document.querySelectorAll('.option'));
@@ -410,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 if (focusedIndex < options.length - 1) {
                     options[focusedIndex + 1].focus();
-                } else {
+                } else if (options.length > 0) {
                     options[0].focus();
                 }
                 break;
@@ -419,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 if (focusedIndex > 0) {
                     options[focusedIndex - 1].focus();
-                } else {
+                } else if (options.length > 0) {
                     options[options.length - 1].focus();
                 }
                 break;

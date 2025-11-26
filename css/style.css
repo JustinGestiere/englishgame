@@ -223,9 +223,51 @@ body {
 }
 
 #feedback {
-    margin-bottom: 2rem;
+    margin: 2rem auto;
     line-height: 1.6;
     font-size: 1.1rem;
+    max-width: 800px;
+    text-align: left;
+}
+
+/* Style pour les réponses incorrectes */
+.answers-summary {
+    margin-top: 2rem;
+    background: #fff9f9;
+    border-left: 4px solid #ff6b6b;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.incorrect-answer {
+    background: #fff0f0;
+    border: 1px solid #ffd6d6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.incorrect-answer p {
+    margin: 0.5rem 0;
+}
+
+.correct-option {
+    color: #2ecc71;
+    font-weight: 500;
+    margin-top: 0.8rem !important;
+    padding: 0.8rem;
+    background: #f0f9f0;
+    border-radius: 6px;
+    border-right: 3px solid #2ecc71;
+}
+
+.result-message {
+    font-size: 1.2rem;
+    margin-bottom: 2rem !important;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
 }
 
 .result {
