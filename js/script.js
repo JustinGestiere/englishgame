@@ -405,12 +405,25 @@ document.addEventListener('DOMContentLoaded', function() {
         
         feedback.appendChild(summary);
         
-        // Afficher un message de félicitations ou d'encouragement
-        const message = document.createElement('p');
+        // Afficher un message de félicitations ou les bonnes réponses
+        const message = document.createElement('div');
         message.className = 'result-message';
-        message.textContent = isSuccess 
-            ? "Excellent travail ! Vous avez une bonne compréhension des guides de style."
-            : "Consultez les bonnes réponses ci-dessous et réessayez pour améliorer votre score !";
+        
+        if (isSuccess) {
+            message.innerHTML = '<p>Excellent travail ! Vous avez une bonne compréhension des guides de style.</p>';
+        } else {
+            // Afficher directement les bonnes réponses
+            quizQuestions.forEach((question, index) => {
+                const correctOption = question.options[question.correctIndex];
+                const questionElement = document.createElement('div');
+                questionElement.className = 'correct-answer';
+                questionElement.innerHTML = `
+                    <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                    <p class="correct-option">✅ Réponse correcte : ${correctOption}</p>
+                `;
+                message.appendChild(questionElement);
+            });
+        }
         feedback.insertBefore(message, summary);
         
         // Afficher la section des résultats
