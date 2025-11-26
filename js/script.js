@@ -299,31 +299,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadQuestion() {
-        // Afficher la question et les options
-        questionElement.textContent = quizQuestions[currentQuestionIndex].question;
+        console.log('Chargement de la question', currentQuestionIndex);
+        console.log('Questions chargées :', quizQuestions);
+        
+        // Vérifier si on a des questions
+        if (!quizQuestions || quizQuestions.length === 0) {
+            console.error('Aucune question chargée');
+            return;
+        }
+        
+        // Afficher la question actuelle
+        const currentQuestion = quizQuestions[currentQuestionIndex];
+        console.log('Question actuelle :', currentQuestion);
+        
+        // Mettre à jour le texte de la question
+        questionElement.textContent = currentQuestion.question;
+        
+        // Vider le conteneur d'options
         optionsContainer.innerHTML = '';
         
-        quizQuestions[currentQuestionIndex].options.forEach((option, index) => {
-            const optionElement = document.createElement('div');
+        // Ajouter les options de réponse
+        currentQuestion.options.forEach((option, index) => {
+            const optionElement = document.createElement('button');
             optionElement.className = 'option';
             optionElement.textContent = option;
+            optionElement.type = 'button';
             optionElement.addEventListener('click', () => selectOption(optionElement, index));
             
             optionsContainer.appendChild(optionElement);
         });
         
-        // Afficher la section quiz et charger la première question
-        showSection('quiz');
-        quizContainer.classList.remove('hidden');
+        // Mettre à jour la progression
+        progressElement.textContent = `Question ${currentQuestionIndex + 1} sur ${quizQuestions.length}`;
+        
         // Mettre à jour les boutons de navigation
         backBtn.classList.toggle('hidden', currentQuestionIndex === 0);
         nextBtn.classList.toggle('hidden', currentQuestionIndex === quizQuestions.length - 1);
         finishBtn.classList.toggle('hidden', currentQuestionIndex !== quizQuestions.length - 1);
-        
-        // Focus sur la première option pour l'accessibilité
-        if (optionsContainer.firstChild) {
-            optionsContainer.firstChild.focus();
-        }
     }
 
     function selectOption(optionElement, optionIndex) {
