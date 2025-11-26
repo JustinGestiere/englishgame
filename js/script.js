@@ -404,6 +404,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Afficher toutes les questions avec leurs réponses
         feedback.innerHTML = '';
         
+        // Ajouter le titre et le score
+        const resultHeader = document.createElement('div');
+        resultHeader.className = 'result-header';
+        resultHeader.innerHTML = `
+            <h2>${isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau'}</h2>
+            <p>Votre score : ${score} sur ${quizQuestions.length}</p>
+        `;
+        feedback.appendChild(resultHeader);
+        
+        // Ajouter chaque question avec sa réponse
         quizQuestions.forEach((question, index) => {
             const userAnswerIndex = userAnswers[index];
             const isCorrect = userAnswerIndex === question.correctIndex;
@@ -412,12 +422,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 : 'Pas de réponse';
             
             const answerElement = document.createElement('div');
-            answerElement.className = isCorrect ? 'correct-answer' : 'incorrect-answer';
+            answerElement.className = 'question-result';
             
             answerElement.innerHTML = `
-                <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                <p>${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}</p>
-                ${!isCorrect ? `<p>✅ Réponse correcte : ${question.options[question.correctIndex]}</p>` : ''}
+                <p class="question-text"><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                <p class="user-answer ${isCorrect ? 'correct' : 'incorrect'}">
+                    ${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}
+                </p>
+                ${!isCorrect ? `<p class="correct-answer">✅ Réponse correcte : ${question.options[question.correctIndex]}</p>` : ''}
             `;
             
             feedback.appendChild(answerElement);
