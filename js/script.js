@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Afficher les résultats
         const percentage = Math.round((score / quizQuestions.length) * 100);
-        const isSuccess = percentage >= 70;
+        const isSuccess = percentage >= 66;
         
         resultTitle.textContent = isSuccess ? '🎉 Congratulations!' : '😕 Try Again';
         resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
