@@ -401,20 +401,13 @@ document.addEventListener('DOMContentLoaded', function() {
         resultTitle.parentElement.className = `result ${isSuccess ? 'success' : 'failure'}`;
         scoreText.textContent = `Votre score : ${score} sur ${quizQuestions.length}`;
         
-        // Afficher toutes les questions avec leurs réponses
+        // Afficher les réponses (sauf la dernière question)
         feedback.innerHTML = '';
         
-        // Ajouter le titre et le score
-        const resultHeader = document.createElement('div');
-        resultHeader.className = 'result-header';
-        resultHeader.innerHTML = `
-            <h2>${isSuccess ? '🎉 Félicitations !' : '😕 Essayez à nouveau'}</h2>
-            <p>Votre score : ${score} sur ${quizQuestions.length}</p>
-        `;
-        feedback.appendChild(resultHeader);
+        // Ne pas afficher la dernière question dans les résultats
+        const questionsToShow = quizQuestions.slice(0, -1);
         
-        // Ajouter chaque question avec sa réponse
-        quizQuestions.forEach((question, index) => {
+        questionsToShow.forEach((question, index) => {
             const userAnswerIndex = userAnswers[index];
             const isCorrect = userAnswerIndex === question.correctIndex;
             const userAnswer = userAnswerIndex !== null && userAnswerIndex !== undefined 
@@ -422,18 +415,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 : 'Pas de réponse';
             
             const answerElement = document.createElement('div');
-            answerElement.className = 'question-result';
+            answerElement.className = isCorrect ? 'correct-answer' : 'incorrect-answer';
             
             answerElement.innerHTML = `
-                <p class="question-text"><strong>Question ${index + 1}:</strong> ${question.question}</p>
-                <p class="user-answer ${isCorrect ? 'correct' : 'incorrect'}">
-                    ${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}
-                </p>
-                ${!isCorrect ? `<p class="correct-answer">✅ Réponse correcte : ${question.options[question.correctIndex]}</p>` : ''}
+                <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                <p>${isCorrect ? '✅' : '❌'} Votre réponse : ${userAnswer}</p>
+                ${!isCorrect ? `<p>✅ Réponse correcte : ${question.options[question.correctIndex]}</p>` : ''}
             `;
             
             feedback.appendChild(answerElement);
         });
+        
+        // Ajouter un message si toutes les questions sauf une sont affichées
+        if (quizQuestions.length > 1) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'info-message';
+            messageElement.textContent = `La dernière question n'est pas incluse dans les résultats.`;
+            feedback.appendChild(messageElement);
+        }
         
         // Afficher la section des résultats
         quizContainer.classList.add('hidden');
