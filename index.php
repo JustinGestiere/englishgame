@@ -30,7 +30,7 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Home Screen -->
             <section id="home" class="section active">
                 <div class="btn-group">
-                    <button id="startQuiz" class="btn" aria-label="Start the quiz">Staaaart Quiz</button>
+                    <button id="startQuiz" class="btn" aria-label="Start the quiz">Start Quiz</button>
                     <button id="showRules" class="btn" aria-label="View game rules">View Rules</button>
                 </div>
             </section>
