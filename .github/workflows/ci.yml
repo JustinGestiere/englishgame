@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            # 1. Aller dans le dossier du projet
+            cd /srv/apps/reverse-proxy/apps/mon-projet/code
+
+            # 2. Mettre à jour le code
+            git pull origin main
+
+            # 3. Relancer le conteneur proprement
+            cd ..
+            docker compose up -d --build
