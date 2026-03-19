@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # 1. Aller dans le dossier du projet
-            cd /srv/apps/reverse-proxy/apps/mon-projet/code
+            cd /srv/apps/reverse-proxy/apps/thebrandquest/code
 
             # 2. Mettre à jour le code
             git pull origin main
